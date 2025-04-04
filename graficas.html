@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas de Encuesta sobre el Agua</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f9ff;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+        .grafica {
+            margin: 30px auto;
+            width: 85%;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .grafica:hover {
+            transform: scale(1.02);
+        }
+        .grafica h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+            font-size: 20px;
+            text-align: center;
+        }
+        .barra {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .barra span {
+            width: 200px;
+            font-size: 14px;
+            color: #555;
+        }
+        .barra div {
+            height: 25px;
+            border-radius: 8px;
+            margin-left: 10px;
+            transition: width 0.3s ease;
+        }
+        .porcentaje {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Colores personalizados para las barras */
+        .barra:nth-child(1) div { background-color: #007bff; }
+        .barra:nth-child(2) div { background-color: #28a745; }
+        .barra:nth-child(3) div { background-color: #ffc107; }
+        .barra:nth-child(4) div { background-color: #dc3545; }
+
+        /* Gráfica circular */
+        .circulo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            background: conic-gradient(#007bff 50%, #ffc107 50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .circulo span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Estilo para la última gráfica */
+        .estrategias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .estrategia-box {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #333;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .estrategia-box:hover {
+            transform: scale(1.05);
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados de la Encuesta sobre el Uso del Agua</h1>
+
+    <!-- Gráfica 1: ¿Consideras que la escasez de agua es un problema en tu comunidad? -->
+    <div class="grafica">
+        <h2>¿Consideras que la escasez de agua es un problema en tu comunidad?</h2>
+        <div class="barra">
+            <span>Sí</span>
+            <div style="width: 80%;"></div>
+            <span class="porcentaje">80%</span>
+        </div>
+        <div class="barra">
+            <span>No</span>
+            <div style="width: 20%;"></div>
+            <span class="porcentaje">20%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 2: ¿Has experimentado restricciones en el suministro de agua en tu hogar? -->
+    <div class="grafica">
+        <h2>¿Has experimentado restricciones en el suministro de agua en tu hogar?</h2>
+        <div class="barra">
+            <span>Sí</span>
+            <div style="width: 70%;"></div>
+            <span class="porcentaje">70%</span>
+        </div>
+        <div class="barra">
+            <span>No</span>
+            <div style="width: 30%;"></div>
+            <span class="porcentaje">30%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 3: ¿Qué medidas crees que se pueden tomar para reducir el desperdicio de agua? -->
+    <div class="grafica">
+        <h2>¿Qué medidas crees que se pueden tomar para reducir el desperdicio de agua?</h2>
+        <div class="estrategias">
+            <div class="estrategia-box">
+                <strong>Reparar fugas</strong>
+                <p>30%</p>
+            </div>
+            <div class="estrategia-box">
+                <strong>Reutilizar agua</strong>
+                <p>25%</p>
+            </div>
+            <div class="estrategia-box">
+                <strong>Cerrar grifos</strong>
+                <p>20%</p>
+            </div>
+            <div class="estrategia-box">
+                <strong>Otros</strong>
+                <p>25%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráfica 4: ¿Crees que el cambio climático está influyendo en la disponibilidad de agua? -->
+    <div class="grafica">
+        <h2>¿Crees que el cambio climático está influyendo en la disponibilidad de agua?</h2>
+        <div class="circulo">
+            <span>60%</span>
+        </div>
+        <p style="text-align: center;">Sí: 60%<br>No: 40%</p>
+    </div>
+
+    <!-- Gráfica 5: ¿Qué papel crees que deben jugar las autoridades en la gestión del agua? -->
+    <div class="grafica">
+        <h2>¿Qué papel crees que deben jugar las autoridades en la gestión del agua?</h2>
+        <div class="barra">
+            <span>Gestión activa</span>
+            <div style="width: 50%;"></div>
+            <span class="porcentaje">50%</span>
+        </div>
+        <div class="barra">
+            <span>Sanciones</span>
+            <div style="width: 30%;"></div>
+            <span class="porcentaje">30%</span>
+        </div>
+        <div class="barra">
+            <span>Ninguno</span>
+            <div style="width: 20%;"></div>
+            <span class="porcentaje">20%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 6: ¿Has notado un aumento en el costo del agua en los últimos años? -->
+    <div class="grafica">
+        <h2>¿Has notado un aumento en el costo del agua en los últimos años?</h2>
+        <div class="barra">
+            <span>Sí</span>
+            <div style="width: 90%;"></div>
+            <span class="porcentaje">90%</span>
+        </div>
+        <div class="barra">
+            <span>No</span>
+            <div style="width: 10%;"></div>
+            <span class="porcentaje">10%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 7: ¿Consideras que las empresas deben tener regulaciones más estrictas? -->
+    <div class="grafica">
+        <h2>¿Consideras que las empresas deben tener regulaciones más estrictas?</h2>
+        <div class="barra">
+            <span>Sí</span>
+            <div style="width: 85%;"></div>
+            <span class="porcentaje">85%</span>
+        </div>
+        <div class="barra">
+            <span>No</span>
+            <div style="width: 15%;"></div>
+            <span class="porcentaje">15%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 8: ¿Qué sectores económicos utilizan más agua? -->
+    <div class="grafica">
+        <h2>¿Qué sectores económicos utilizan más agua?</h2>
+        <div class="barra">
+            <span>Agricultura</span>
+            <div style="width: 50%;"></div>
+            <span class="porcentaje">50%</span>
+        </div>
+        <div class="barra">
+            <span>Industria</span>
+            <div style="width: 30%;"></div>
+            <span class="porcentaje">30%</span>
+        </div>
+        <div class="barra">
+            <span>Otros</span>
+            <div style="width: 20%;"></div>
+            <span class="porcentaje">20%</span>
+        </div>
+    </div>
+
+    <!-- Gráfica 9: ¿La educación sobre el uso responsable del agua es suficiente? -->
+    <div class="grafica">
+        <h2>¿La educación sobre el uso responsable del agua es suficiente?</h2>
+        <div class="circulo">
+            <span>50%</span>
+        </div>
+        <p style="text-align: center;">Sí: 50%<br>No: 50%</p>
+    </div>
+
+    <!-- Gráfica 10: ¿Qué estrategias implementarías para mejorar la disponibilidad de agua? -->
+    <div class="grafica">
+        <h2>¿Qué estrategias implementarías para mejorar la disponibilidad de agua?</h2>
+        <div class="estrategias">
+            <div class="estrategia-box">
+                <strong>Reciclar agua</strong>
+                <p>40%</p>
+            </div>
+            <div class="estrategia-box">
+                <strong>Concientización</strong>
+                <p>30%</p>
+            </div>
+            <div class="estrategia-box">
+                <strong>Otros</strong>
+                <p>30%</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
