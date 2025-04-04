@@ -1,11 +1,14 @@
-# Usar una imagen base de Nginx
+# Use Nginx as base image
 FROM nginx:alpine
 
-# Copiar los archivos HTML al directorio de Nginx
-COPY . /usr/share/nginx/html
+# Remove default Nginx configuration
+RUN rm -rf /usr/share/nginx/html/*
 
-# Exponer el puerto 80
+# Copy your HTML file to Nginx's default serving directory
+COPY graficas.html /usr/share/nginx/html/index.html
+
+# Expose port 80
 EXPOSE 80
 
-# Comando para iniciar Nginx
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
